@@ -1,0 +1,73 @@
+/* News listing — rebuilt from the original blog feed (the source renders it with a script). Measurements taken from freyaolafson.com/news at 1280px. */
+.news-list {
+  position: relative;
+  grid-area: 1 / 1 / 2 / 2;
+  place-self: start;
+  margin: 32px 0 64px calc(50% - 470px);
+  width: 700px;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.news-card {
+  border: 1px solid rgb(255, 255, 255);
+  background: rgba(186, 218, 85, 0.99);
+}
+.news-card-link {
+  display: flex;
+  min-height: 249px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.news-card-text {
+  flex: 0 0 366px;
+  box-sizing: border-box;
+  padding: 25px 24px 24px;
+  overflow: hidden;
+}
+.news-card-title {
+  margin: 0 0 12px;
+  font-family: georgia, palatino, "book antiqua", "palatino linotype", serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.17;
+  color: rgb(0, 0, 0);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.news-card-excerpt {
+  margin: 0;
+  font-family: "open sans", sans-serif;
+  font-size: 13px;
+  line-height: 19.5px;
+  color: rgb(0, 0, 0);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+.news-card-link:hover .news-card-title {
+  text-decoration: underline;
+}
+.news-card-media {
+  flex: 1 1 334px;
+  min-height: 249px;
+  overflow: hidden;
+  background: rgb(0, 0, 0);
+}
+.news-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 760px) {
+  .news-list { margin-left: 16px; }
+  .news-card-link { flex-direction: column; }
+  .news-card-text { flex: none; }
+  .news-card-media { flex: none; height: 240px; }
+}
